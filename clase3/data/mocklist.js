@@ -1,7 +1,7 @@
 const lists = [
     {
         id: 1,
-        name: 'Mi lista',
+        name: 'Mi lista para la casa',
         tasks: []
     },
     {

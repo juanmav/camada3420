@@ -6,7 +6,15 @@ let lists = require('../data/mocklist');
 const taskRouter = require('./tasks');
 
 router.get('/', function(req, res){
-    res.json(lists);
+
+    let query = req.query;
+
+    if (query.name){
+        let filtered = lists.filter( l => l.name.includes(query.name));
+        res.json(filtered);
+    } else{
+        res.json(lists);
+    }
 });
 
 router.get('/:id', function(req, res){
